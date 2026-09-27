@@ -268,7 +268,16 @@ section{
   justify-content: center;
   border-radius: 20px;
   /*border: 5px solid #f8781d;*/
+  position: relative;
 }
+.img{
+  position: absolute;
+  max-height: 300px;
+  pointer-events: none;
+}
+.img.right{ right: -600px; }
+.img.left{ left: -600px; }
+
 section p{
   color: #171717;
   margin-left: 40px;
@@ -294,6 +303,9 @@ section h1{
     margin-left: 5px;
     margin-right: 5px;
   }
+  .img{
+    display: none;
+  }
 }
 
 #mess{
@@ -301,6 +313,7 @@ section h1{
   margin-left: 7%;
   margin-right: auto;
 }
+
 #projects{
   margin-right: 7%;
   margin-left: auto;
@@ -356,6 +369,7 @@ section h1{
   text-align: left;
   width: 100%;
   margin: 8px 0;
+
 }
 #FAQ summary{
   cursor: pointer;
@@ -513,6 +527,9 @@ section h1{
     font-size: 15px;
     margin: 5px 0 0;
   }
+  #FAQ details{
+    font-size: 22px;
+  }
 }
 
 
@@ -522,32 +539,56 @@ section h1{
   width: 150px;
 }
 
-.MeetingInfo{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-  margin: 10px 0 25px;
-}
-.InfoPill{
+.meetingcard{
+  border: 3px solid #f8781d;
+  border-radius: 20px;
+  padding: 10px;
+  background-color: #ffffff;
+  width: 85%;
   display: flex;
   align-items: center;
-  gap: 8px;
-  background-color: #ffffff;
-  border: 2px solid #f8781d;
-  border-radius: 50px;
-  padding: 10px 22px;
-  font-size: 20px;
-  font-weight: bold;
-  color: #f8781d;
+  justify-content: space-between;
 }
-.InfoIcon{
-  font-size: 22px;
+.meetingtext{
+  flex:1;
+}
+.infobox{
+  text-align: left;
+  margin: 0;
+  color:#171717;
+  font-size: 20px;
+  margin-bottom: 05px;
+}
+.meetingcard p{
+  color: #f8781d;
+  text-decoration:underline wavy #f8781d;
+  font-size: 28px;
+  margin-bottom: 15px;
+  margin-top: 10px;
+  margin-left: 25px;
+  text-align: left;
+}
+.meetingcard img{
+  width:140px;
+  height: 140px;
+  object-fit: contain;
+  margin-right: 40px;
 }
 
+
 @media (max-width: 800px){
-  .InfoPill{
-    font-size: 15px;
-    padding: 8px 16px;
-  }
+    .meetingcard{
+        flex-direction: column;
+        text-align: center;
+    }
+    .meetingcard img{
+      margin: 0;
+      width: 120px;
+      height: 120px;
+    }
+
+    .infobox{
+        text-align: left;
+    }
 }
+
